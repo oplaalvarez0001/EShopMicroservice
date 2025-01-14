@@ -17,13 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Exceptions\" />
     <Folder Include="Data\" />
-    <Folder Include="Products\GetProducts\" />
-    <Folder Include="Products\GetProductById\" />
-    <Folder Include="Products\GetProductByCategory\" />
-    <Folder Include="Products\DeleteProduct\" />
-    <Folder Include="Products\UpdateProduct\" />
   </ItemGroup>
 
   <ItemGroup>

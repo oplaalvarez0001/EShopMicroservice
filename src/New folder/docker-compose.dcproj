@@ -4,10 +4,10 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>a85f5868-59f6-4c11-a3de-9cf3271d8519</ProjectGuid>
+    <ProjectGuid>be37f9e0-a4d8-4a64-b077-592f9aa4bcc3</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
-    
+	
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

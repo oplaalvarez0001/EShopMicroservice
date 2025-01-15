@@ -1,9 +1,23 @@
-﻿namespace Catalog.API.Products.CreateProduct
+﻿using FluentValidation;
+
+namespace Catalog.API.Products.CreateProduct
 {
 
     public record CreateProductCommand(string Name, List<String> Category, string ImageFile, string Description, decimal Price)
     : ICommand<CreateProductResult>;
     public record CreateProductResult(Guid Id);
+
+    public class CreateProductCommandValidator: AbstractValidator<CreateProductCommand>
+    {
+        public CreateProductCommandValidator()
+        {
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
+            RuleFor(x => x.Category).NotEmpty();
+            RuleFor(x => x.ImageFile).NotEmpty();
+            RuleFor(x => x.Description).NotEmpty();
+            RuleFor(x => x.Price).GreaterThan(0);
+        }
+    }
 
 
     internal class CreateProductCommandHandler(IDocumentSession session)
@@ -13,7 +27,7 @@
         {
             //Business logic to create a product
 
-            //create Product Entity from command object
+           //create Product Entity from command object
             var product = new Product
             {
                 Name = command.Name,
